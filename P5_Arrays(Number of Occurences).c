@@ -1,19 +1,18 @@
 #include <stdio.h>
 int main()
 {
-    int arr[5];
-    int new_arr[5];
+    int arr[5][2]={{0,0},{0,0},{0,0},{0,0},{0,0}};
     printf("Enter 5 integers: ");
     for(int i=0;i<5;i++)
     {
-        scanf("%d",&arr[i]);
+        scanf("%d",&arr[i][0]);
     }
     for(int i=0;i<5;i++)
     {
        int check=0;
        for(int j=0;j<5;j++)
        {
-           if(arr[i]==new_arr[j])
+           if(arr[i][0]==arr[j][0] && arr[j][1]>0)
            {
                check=1;
                break;
@@ -21,17 +20,19 @@ int main()
        }
        if(check==0)
        {
-           new_arr[i]=arr[i];
-           int count=0;
            for(int k=0;k<5;k++)
            {
-               if(arr[i]==arr[k])
+               if(arr[i][0]==arr[k][0])
                {
-                   count++;
+                   arr[i][1]++;
                }
            }
-            printf("Number of Occurences %d is %d\n",arr[i],count);
+            printf("Number of Occurences %d is %d\n",arr[i][0],arr[i][1]);
        }
+      
+    }
+    return 0;
+}
       
     }
     return 0;
