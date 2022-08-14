@@ -8,6 +8,7 @@ public class InputOutput
         int a=sc.nextInt();
         System.out.println("Float Input=");
         float b=sc.nextFloat();
+        sc.nextLine();
         System.out.println("String Input=");
         String c=sc.nextLine();
     }
