@@ -13,23 +13,19 @@ int main()
     scanf("%d",&Y);
     int s1=strlen(str);
     int s2=strlen(add_str);
+    printf("%d\n",s1);
+    printf("%d\n",s2);
     for(int i=0;i<Y;i++)
     {
-        final_str[i]==str[i];
+        final_str[i]=str[i];
     }
-     for(int i=Y;i<Y+s2;i++)
+     for(int i=0;i<s2;i++)
     {
-        for(int j=0;j<s2;j++)
-        {
-            final_str[i]==add_str[j];
-        }
+        final_str[Y+i]=add_str[i];
     }
-    for(int i=Y+s2;i<s1+s2;i++)
+    for(int i=0;i<s1+Y;i++)
     {
-        for(int j=s2-s1;j<s2;j++)
-        {
-            final_str[i]==str[j];
-        }
+        final_str[s2+Y+i]=str[s2-Y+i];
     }
     printf("%s",final_str);
     return 0;
