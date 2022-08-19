@@ -1,77 +1,58 @@
 #include <stdio.h>
-    struct Patient
+struct DOB
     {
-        char Patient_name[50];
-        struct DOB
-        {
-            int day;
-            int month;
-            int year;
-        }DoB;
-        double Bill_Amount;
-        double Final_Bill;
+        int day;
+        int month;
+        int year;
     };
-    int main()
-    {
-        struct Patient P;
-        printf("Enter the name of the patient\n");
-        scanf("%s",P.Patient_name);
-        printf("Enter Date of Birth of the Patient\n");
-        scanf("%d\n",P.DoB.day);
-        scanf("%d\n",P.DoB.month);
-        scanf("%d\n",P.DoB.year);
-        int age= 2022-P.DoB.year;
-        printf("%d",age);
-        printf("Enter the bill amount of the patient\n");
-        scanf("%f",P.Bill_Amount);
-        if(age>=60)
-        {
-            printf("You will get discount of 25 percent on your bill account");
-            P.Final_Bill=P.Bill_Amount*0.75;
-            printf("Your Final bill is %f",P.Final_Bill);
-        }
-        else
-        {
-            P.Final_Bill=P.Bill_Amount;
-            printf("Your Final bill is %f",P.Final_Bill);
-        }
-        return 0;
-    }#include <stdio.h>
-    struct Patient
-    {
-        char Patient_name[50];
-        struct DOB
-        {
-            int day;
-            int month;
-            int year;
-        }DoB;
-        double Bill_Amount;
-        double Final_Bill;
+
+struct Patient
+{
+    char Patient_name[50];
+    struct DOB DoB;
+    float Bill_Amount;
+    float Final_Bill;
+    int age;
     };
-    int main()
-    {
-        struct Patient P;
-        printf("Enter the name of the patient\n");
-        scanf("%s",P.Patient_name);
+int main()
+{
+    struct Patient P;
+    struct Patient normal[100], senior[100];
+    int number;
+    int a=0, b=0;
+    printf("Please enter number of patients: \n");
+    scanf("%d",&number);
+    for (int i=0; i<number; i++){
+        struct DOB date;
         printf("Enter Date of Birth of the Patient\n");
-        scanf("%d\n",P.DoB.day);
-        scanf("%d\n",P.DoB.month);
-        scanf("%d\n",P.DoB.year);
-        int age= 2022-P.DoB.year;
-        printf("%d",age);
-        printf("Enter the bill amount of the patient\n");
-        scanf("%f",P.Bill_Amount);
-        if(age>=60)
-        {
-            printf("You will get discount of 25 percent on your bill account");
-            P.Final_Bill=P.Bill_Amount*0.75;
-            printf("Your Final bill is %f",P.Final_Bill);
+        scanf("%d\n",&date.day);
+        scanf("%d\n",&date.month);
+        scanf("%d",&date.year);
+        int age= 2022-date.year;
+        if (age>=60){
+            senior[a].DoB = date;
+            senior[a].age = age;
+            printf("Enter the name of the patient\n");
+            scanf("%s",&senior[a].Patient_name);
+            printf("Enter the bill amount of the patient\n");
+            scanf("%f",&senior[a].Bill_Amount);
+            a++;
         }
-        else
-        {
-            P.Final_Bill=P.Bill_Amount;
-            printf("Your Final bill is %f",P.Final_Bill);
+        else{
+            normal[b].DoB = date;
+            normal[b].age = age;
+            printf("Enter the name of the patient\n");
+            scanf("%s",&normal[b].Patient_name);
+            printf("Enter the bill amount of the patient\n");
+            scanf("%f",&normal[b].Bill_Amount);
+            b++;
         }
-        return 0;
     }
+    
+    for (int i=0; i<b; i++){
+        printf("%s is eligible for discount",senior[i].Patient_name);
+        printf("Final amount is ");
+        printf("%f",senior[i].Bill_Amount*0.75);
+    }
+    return 0;
+}
