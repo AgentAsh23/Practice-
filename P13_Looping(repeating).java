@@ -7,17 +7,26 @@ class HelloWorld
         Random random=new Random();
         int value1 =random.nextInt(100);
         System.out.println(value1);
-        System.out.println("Enter the value to be checked");
-        int num=sc.nextInt();
         int n=1;
-        for(int i=0;i<n;i++)
+        while(n>0)
         {
+            System.out.println("Enter the value to be checked");
+            int num=sc.nextInt();
             if(value1==num)
             {
                 System.out.println("Matched");
+                n=0;
             }
-        n++;
-        break;
+            else if(value1<num)
+            {
+                System.out.println("Value is too high");
+                n=1;
+            }
+            else if(value1>num)
+            {
+                System.out.println("Value is too low");
+                n=1;
+            }
         }
     }
 }
