@@ -65,32 +65,6 @@ int length(node* head)
     return l;
 }
 
-node* Kappend(node* &head ,int k)
-{
-    node* newHead;
-    node* newTail;
-    node* tail=head;
-    int l=length(head);
-    int count=1;
-    while(tail->next!=NULL)
-    {
-        if(count==l-k)
-        {
-            newTail=tail;
-        }
-        if(count==l-k+1)
-        {
-            newHead=tail;
-        }
-        tail=tail->next;
-        count++;
-    }
-    newTail->next=NULL;
-    tail->next=head;
-    return newHead;
-    
-}
-
 int intersection(node* &head1,node* &head2)
 {
     int l1=length(head1);
