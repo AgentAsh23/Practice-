@@ -5,7 +5,7 @@ using namespace std;
 int PrefixEvaluation(string s)
 {
     stack<int> st;
-    for(int i=s.length()-1;i>0;i--)
+    for(int i=s.length()-1;i>=0;i--)
     {
         if(s[i]>='0'&& s[i]<='9')
         {
@@ -23,6 +23,9 @@ int PrefixEvaluation(string s)
                 case '+':
                 st.push(op1+op2);
                 break;
+                case '-':
+                st.push(op1-op2);
+                break;
                 case '*':
                 st.push(op1*op2);
                 break;
@@ -32,17 +35,13 @@ int PrefixEvaluation(string s)
                 case '^':
                 st.push(pow(op1,op2));
                 break;
-                
-                
             }
         }
     }
     return st.top();
 }
-
-
-int main() {
-    cout << PrefixEvaluation("-*7*45+20")<<endl;
-
+int main() 
+{
+    cout << PrefixEvaluation("-+7*45+20")<<endl;
     return 0;
 }
