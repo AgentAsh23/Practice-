@@ -1,5 +1,5 @@
 import java.util.*;
-class TryAndCatch
+class NestedTryAndCatch
 {
     public static void main(String[] args) 
     {
