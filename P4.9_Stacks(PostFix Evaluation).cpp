@@ -2,7 +2,7 @@
 #include<stack>
 #include<math.h>
 using namespace std;
-int PrefixEvaluation(string s)
+int PostfixEvaluation(string s)
 {
     stack<int> st;
     for(int i=0;i<s.length();i++)
@@ -42,6 +42,6 @@ int PrefixEvaluation(string s)
 }
 int main() 
 {
-    cout << PrefixEvaluation("46+2/5*7+")<<endl;
+    cout << PostfixEvaluation("46+2/5*7+")<<endl;
     return 0;
 }
