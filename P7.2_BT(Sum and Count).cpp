@@ -13,7 +13,6 @@ struct Node
         right=NULL;
     }
 };
-
 int countNodes(Node* root)
 {
     if(root==NULL)
@@ -21,6 +20,15 @@ int countNodes(Node* root)
         return 0;
     }
     return countNodes(root->left)+countNodes(root->right)+1;
+}
+
+int SumNodes(Node* root)
+{
+    if(root==NULL)
+    {
+        return 0;
+    }
+    return SumNodes(root->left)+SumNodes(root->right)+root->data;
 }
 int main() 
 {
@@ -31,6 +39,7 @@ int main()
     root->left->right=new Node(5);
     root->right->left=new Node(6);
     root->right->right=new Node(7);
+    cout<<SumNodes(root)<<endl;;
     cout<<countNodes(root);
     return 0;
 }
