@@ -6,10 +6,8 @@ import java.util.regex.*;
 
 public class Main
 {
-
     public static void main(String[] args) 
     {
-
         HashSet  hs = new HashSet ();
         int count = 0;
         Scanner sc = new Scanner(System.in);
