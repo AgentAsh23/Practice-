@@ -7,7 +7,7 @@
         struct node *left, *right;
   };
 
-  struct tnode *root = NULL;
+  struct node *root = NULL;
 
   /* creating node of the tree  and fill the given data */
   struct node * createNode(int data) {
