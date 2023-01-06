@@ -13,3 +13,11 @@ read num1
 echo "ENter Second Number"
 read num2
 echo "Addition of two numbers is "$(($num1+$num2))
+read num3
+read num4
+if [$num3 -lt$num4];
+then
+echo "$num4 is smaller than $num3"
+else
+echo "$num3 is smaller than $num4"
+fi
